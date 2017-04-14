@@ -15,7 +15,6 @@ function unHidMyDiv(selected_class) {
     // $(selected_class).removeClass('hide_this_div');
 }
 function toggleMyDiv() {
-    console.log('hello')
     if ($('#upload_div').css('display') === 'none' ) {
         hidMyDiv('#button_wrapper');
         unHidMyDiv('#upload_div');

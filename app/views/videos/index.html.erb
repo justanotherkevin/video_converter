@@ -13,11 +13,12 @@
 
             <div class="col-sm-6" id="upload_div">
                 <i id="close_div" onclick="toggleMyDiv()" class="glyphicon glyphicon-remove-sign"></i>
-                <form method="post">
+                <form method="post" action="/videos">
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                     <h2 class="text-center">File type conversion</h2>
                     <p>Due to broswer support, only mp4 formate will have preview</p>
                     <input type="file" class="upload_field"/>
-                    <button class="btn btn-default" type="button">Button</button>
+                    <button class="btn btn-default" type="submit">Button</button>
                 </form>
             </div>
         </div><!-- end of row  -->
