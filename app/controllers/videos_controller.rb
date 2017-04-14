@@ -4,7 +4,11 @@ class VideosController < ApplicationController
   def new
   end
   def create
-    debugger
-    render 'video#index'
+    render 'videos#index'
+  end
+
+  private
+  def ffmpeg_params
+    params.require(:ffmpeg).permit(:video, :conversion_option)
   end
 end
