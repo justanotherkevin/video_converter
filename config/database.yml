@@ -18,8 +18,4 @@ test:
 
 production:
   <<: *default
-<<<<<<< HEAD
-  database: my_database_production 
-=======
   database: my_database_production
->>>>>>> 7223d6c829a5dc93b4f84ad8998daf4847c5c27e
