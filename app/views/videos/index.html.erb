@@ -1,0 +1,62 @@
+<div class="jumbotron hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>I have no idea!</h1>
+                <p>FFMPEG to stuff</p>
+                <div id="button_wrapper">
+                    <a class="btn btn-success btn-lg" onclick='toggleMyDiv()' id="conversion_button">
+                        <i class="fa fa-google"></i>Formate conversion
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm-6" id="upload_div">
+                <i id="close_div" onclick="toggleMyDiv()" class="glyphicon glyphicon-remove-sign"></i>
+                <%= render "form" %>
+                <!-- <form method="post" action="/videos">
+                    <h2 class="text-center">File type conversion</h2>
+                    <p>Due to broswer support, only mp4 formate will have preview</p>
+                    <input type="file" class="upload_field"/>
+                    <button class="btn btn-default" type="submit">Button</button>
+                </form> -->
+            </div>
+        </div><!-- end of row  -->
+    </div>
+</div><!-- end of jumbotron-->
+<section class="testimonials">
+    <h2 class="text-center">Love It or Get Out !</h2>
+    <blockquote>
+        <p>I may be drunk, Miss, but in the morning I will be sober and you will still be ugly.</p>
+        <footer>Winston Churchill</footer>
+    </blockquote>
+</section><!-- end of testimonials-->
+<section class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Fantastic Features</h2>
+                <p>Morbi non mauris massa. Duis elit mauris, malesuada nec suscipit ac, bibendum sed augue. Maecenas condimentum magna gravida, laoreet nunc sed, euismod sem.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div class="row icon-features">
+                    <div class="col-xs-4 icon-feature">
+                        <i class="glyphicon glyphicon-cloud"></i>
+                        <p>Cloud-ready
+                        </p>
+                    </div>
+                    <div class="col-xs-4 icon-feature">
+                        <i class="glyphicon glyphicon-piggy-bank"></i>
+                        <p>Feed My Piggy
+                        </p>
+                    </div>
+                    <div class="col-xs-4 icon-feature">
+                        <i class="glyphicon glyphicon-fire"></i>
+                        <p>Fire Proof</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- end of features -->
