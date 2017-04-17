@@ -1,0 +1,19 @@
+- if flash[:notice]
+  = flash[:notice]
+  %br
+
+-# %h3
+  -# = @ffmpeg.title
+-# %p
+  -# = @ffmpeg.description
+%div.video_container
+-# = video_tag @new_movie.path, control: true, style: "max-width: 100%;"
+= video_tag @new_movie.path, controls: true, style: "max-width: 100%;"
+-# = video_tag @ffmpeg.video.path, controls: true, style: "max-width: 100%;"
+-# = video_tag @ffmpeg.video.url(:thumb), controls: true, style: "max-width: 100%;"
+
+-# = video_tag @ffmpeg.path, controls: true, style: "max-width: 100%;"
+
+%br/
+
+= link_to "Back", root_path
