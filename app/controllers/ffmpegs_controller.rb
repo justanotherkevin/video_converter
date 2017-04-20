@@ -1,15 +1,18 @@
 class FfmpegsController < ApplicationController
 
+  def new
+    @ffmpeg = Ffmpeg.new
+  end
   def create
-    binding.pry
-    ffmpeg_params
-    movie = FFMPEG::Movie.new(ffmpeg_params[:video].path)
-    if movie
-      puts "movie made"
-      @new_movie = movie.transcode("movie2.mp4")
+    @ffmpeg = Ffmpeg.create(ffmpeg_params)
+    if @ffmpeg.save
+      flash[:notice] = "Post successfully created"
+      render "show"
+    else
+      flash[:notice] = "Fail to submit"
+      binding.pry
+      redirect_to root_path
     end
-    # trusting that it will always create successful
-    render "show"
   end
 
   def show
@@ -17,6 +20,6 @@ class FfmpegsController < ApplicationController
 
   private
   def ffmpeg_params
-   params.require(:ffmpeg).permit(:video, :conversion_option)
+   params.require(:ffmpeg).permit(:video)
   end
 end

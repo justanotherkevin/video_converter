@@ -22,6 +22,7 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'simple_form', '~> 3.4'
 gem 'streamio-ffmpeg', '~> 2.0'
 gem 'paperclip', '~> 5.1'
+gem 'paperclip-av-transcoder'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
