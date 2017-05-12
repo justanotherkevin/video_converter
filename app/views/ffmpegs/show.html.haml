@@ -6,12 +6,18 @@
   -# = @ffmpeg.title
 -# %p
   -# = @ffmpeg.description
-%div.video_container
--# = video_tag @ffmpeg.video.path, controls: true, style: "max-width: 100%;"
-= video_tag @ffmpeg.video.url(:mp4), controls: true, style: "max-width: 100%;"
+- if @ffmpeg.video.present?
+  %div.video_container
+    = video_tag @ffmpeg.video.url(:mp4), controls: true, style: "max-width: 100%;"
+  %div.video_transcript
+    %p video Transcription text go here
+  %br/
 
--# = video_tag @ffmpeg.path, controls: true, style: "max-width: 100%;"
-
-%br/
+- if @ffmpeg.audio.present?
+  - @ffmpeg.results.each do |result|
+    %div.video_transcript
+      %p= result.transcript
+    %br/
 
 = link_to "Back", root_path
+//

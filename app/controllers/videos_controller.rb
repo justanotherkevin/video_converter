@@ -5,6 +5,7 @@ class VideosController < ApplicationController
     @ffmpeg = Ffmpeg.new
   end
   def create
+    binding.pry
     render 'videos#index'
   end
 

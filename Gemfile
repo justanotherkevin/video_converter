@@ -24,6 +24,14 @@ gem 'streamio-ffmpeg', '~> 2.0'
 gem 'paperclip', '~> 5.1'
 gem 'paperclip-av-transcoder'
 
+gem 'audio_hero'
+
+gem "google-cloud-speech"
+gem "fog-google"
+gem "google-api-client", "> 0.8.5", "< 0.9"
+gem "mime-types"
+gem 'carrierwave', '~> 0.11.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

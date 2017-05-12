@@ -10,5 +10,6 @@
         - @ffmpeg.errors.full_messages.each do |msg|
         %li= msg
   %div.panel-body
-    = f.input :video, as: :file, input_html: { accept: "video/*", required:true } 
+    = f.input :video, as: :file, input_html: { accept: "video/*"}
+    = f.input :audio, as: :file, input_html: { accept: "audio/*"}
   = f.button :submit, "Convert", class: "my-button"

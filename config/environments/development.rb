@@ -12,6 +12,11 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
+  env_vars = YAML.load_file("#{Rails.root.to_s}/config/development.yml")
+  env_vars.each do |k,v|
+    ENV[k] = v
+  end
+
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
