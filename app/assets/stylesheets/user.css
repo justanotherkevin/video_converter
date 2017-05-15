@@ -1,12 +1,15 @@
 .navbar {
-  margin-bottom:0;
-  border:none;
+  margin-bottom: 0px !important;
+  border:none !important;
 }
 
 .navbar-brand .glyphicon {
   margin-right:6px;
 }
-
+.jumbotron {
+    padding-top: 48px;
+    height: 350px;
+}
 .hero {
   background:url(city_bg) no-repeat center;
   background-size:cover;
