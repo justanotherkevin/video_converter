@@ -23,14 +23,16 @@ gem 'simple_form', '~> 3.4'
 gem 'streamio-ffmpeg', '~> 2.0'
 gem 'paperclip', '~> 5.1'
 gem 'paperclip-av-transcoder'
-
+# for sox audio conversion
 gem 'audio_hero'
-
+# for google cloud
 gem "google-cloud-speech"
 gem "fog-google"
 gem "google-api-client", "> 0.8.5", "< 0.9"
 gem "mime-types"
-gem 'carrierwave', '~> 0.11.2'
+# for sidekiq
+gem 'sidekiq'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
