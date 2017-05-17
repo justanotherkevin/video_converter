@@ -2,10 +2,6 @@
   = flash[:notice]
   %br
 
--# %h3
-  -# = @ffmpeg.title
--# %p
-  -# = @ffmpeg.description
 - if @ffmpeg.video.present?
   %div.video_container
     = video_tag @ffmpeg.video.url(:mp4), controls: true, style: "max-width: 100%;"
