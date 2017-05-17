@@ -36,8 +36,18 @@ class Ffmpeg < ApplicationRecord
     [:provider, :google_storage_access_key_id, :google_storage_secret_access_key].inject({}){|keys, key| keys[key] = ENV[key.to_s]; keys}
   end
 
+  def speech_transcriber
+    Google::Cloud::Speech.new project: ENV['project_id']
+  end
+
   def get_gcs_audio_file_path
     "gs://" + Ffmpeg.bucket + "/" + self.audio.path
+  end
+
+  def audio_transcription_params
+    {encoding:    :flac,
+      sample_rate: 16000,
+      language:    "en-US"}
   end
 
   def transcribe_audio
@@ -49,34 +59,17 @@ class Ffmpeg < ApplicationRecord
       self.transcription = results.map{|r| r.transcript}
       self.save
   end
-  def audio_transcription_params
-      {encoding:    :flac,
-      sample_rate: 16000,
-      language:    "en-US"}
-  end
-
-  def speech_transcriber
-    Google::Cloud::Speech.new project: ENV['project_id']
-  end
 
   def get_transcription
-
-    # file_path = "/public"+self.video.url(:mp4)
     file_path = "gs://videotospeechondemoforclient/another_love.flac"
-
     project_id = "speech-to-text-163606"
     speech = Google::Cloud::Speech.new project: project_id
-    # The audio file's encoding and sample rate
     audio = speech.audio file_path,
       encoding:    :flac,
       sample_rate: 16000,
       language:    "en-US"
-    puts "before start"
 
     operation = audio.process
-
-    puts "Operation started"
-
     operation.wait_until_done!
 
     results = operation.results
